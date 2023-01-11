@@ -1,0 +1,132 @@
+
+.header  {
+    background: linear-gradient(to bottom, rgb(150, 150, 150), rgb(200, 200, 200));
+    /* overflow: hidden;
+    transition: height 0.5s, ease; */
+}
+
+.name {
+    margin-top: 0;
+    padding-top: 5px;
+}
+
+/* .parent {
+    z-index: 0;
+} */
+nav {
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+    transition: height 0.5s, ease;
+    
+    background-color: rgb(200,200,200);
+}
+.header {
+    /* display: flex; */
+    align-items: center;
+    text-align: center;
+  }
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
+
+.title {
+    text-align: center;
+}
+
+h4 {
+    margin-top: .5em;
+    margin-bottom: .5em;
+}
+.dropdown-btn {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    /* padding: .5rem; */
+    padding-left: 1rem;
+}
+
+.dropDownContainer {
+    height: 21vh;
+}
+.links {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    transition: height 0.5s ease-in-out;
+
+    color: rgb(170, 170, 170);
+    background: linear-gradient(to bottom right, rgb(50,50,50), rgb(100,100,100));
+    /* border-radius: 10px 10px 0 0; */
+    box-shadow: 3px 3px rgba(0, 0, 0, 0.582);
+}
+
+.dropdown-item {
+display: flex;
+justify-content: center;
+text-align: center;
+}
+
+.dropdown-item:hover {
+    background-color: rgb(100, 100, 100);
+    transition: .8s;
+}
+
+a {
+    color: rgb(0, 0, 0);
+    margin: 0;
+    padding: 0.5rem;
+}
+
+i {
+    position: absolute;
+    right: 2em;
+}
+
+.arrow_icon {
+    margin: 0;
+    transition: transform 0.5s ease;
+}
+
+.rotate {
+    transform: rotate(180deg);
+}
+
+@media only screen and (min-width: 1000px) {
+
+    /* .dropdown {
+        border-radius: 10px;
+        box-shadow: 0 2px gray;
+        margin-bottom: 1em;
+    }
+
+    .links {
+        border-radius: 10px;
+        text-align: center
+    } */
+.arrow {
+    text-align: left;
+    padding: 5px;
+    /* margin-left: 0; */
+}
+    .parent {
+        /* position: relative; */
+    }
+    nav {
+        background-color: rgb(200, 200, 200);
+        position: absolute;
+        width: auto;
+        /* margin-left: 90%; */
+    }
+
+    .arrow_icon {
+        /* display: flex; */
+        /* justify-content: end; */
+        /* float: right; */
+        /* margin-left: 100%; */
+        transition: transform 0.5s ease;
+    }
+}
