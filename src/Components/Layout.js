@@ -44,7 +44,7 @@ function Layout(
                         { geoOptions.map((option, index) => {
                             return (
                                 <li key={index} onClick={
-                                  (e) => { setSelected(option.title); setIsToggled(!isToggled) }}>
+                                  (e) => { setSelected(option.title); setIsToggled(!isToggled); setGeometry(false)}}>
                                     <Link to={option.path}>{option.title}</Link>
                                 </li>
                             )
@@ -65,7 +65,7 @@ function Layout(
                       { metOptions.map((option, index) => {
                             return (
                                 <li key={index} onClick={
-                                  (e) => { setSelected(option.title); setIsToggled(!isToggled) }}>
+                                  (e) => { setSelected(option.title); setIsToggled(!isToggled); setMeteorology(false)}}>
                                     <Link to={option.path}>{option.title}</Link>
                                 </li>
                             )
