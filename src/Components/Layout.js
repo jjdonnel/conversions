@@ -25,7 +25,7 @@ function Layout(
                 </div>
             </div>
             <ul className={isToggled ? "top top-open" : "top top-closed"}>
-              <li className="drop" onClick={(e)=> {setSelected('Home'); setIsToggled(!isToggled)}}>
+              <li className="drop" onClick={(e)=> {setSelected('Home'); setIsToggled(!isToggled);setGeometry(false);setMeteorology(false)}}>
                 <div className="title">
                   <Link to="/">Home</Link>
                 </div>
@@ -44,7 +44,7 @@ function Layout(
                         { geoOptions.map((option, index) => {
                             return (
                                 <li key={index} onClick={
-                                  (e) => { setSelected(option.title); setIsToggled(!isToggled); setGeometry(false)}}>
+                                  (e) => { setSelected(option.title); setIsToggled(!isToggled); setGeometry(false);setMeteorology(false)}}>
                                     <Link to={option.path}>{option.title}</Link>
                                 </li>
                             )
@@ -65,7 +65,7 @@ function Layout(
                       { metOptions.map((option, index) => {
                             return (
                                 <li key={index} onClick={
-                                  (e) => { setSelected(option.title); setIsToggled(!isToggled); setMeteorology(false)}}>
+                                  (e) => { setSelected(option.title); setIsToggled(!isToggled); setMeteorology(false); setGeometry(false)}}>
                                     <Link to={option.path}>{option.title}</Link>
                                 </li>
                             )
