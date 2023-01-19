@@ -5,7 +5,7 @@ const Home = () => {
         <div 
             className='home'
         >
-            <h3>A collection of simple conversion calculators.</h3>
+            <h3 className='description'>A collection of simple conversion calculators.</h3>
         </div>
     );
 };

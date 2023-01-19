@@ -26,7 +26,7 @@ function Length() {
 
     return (
         <div className="length">
-            <h3>Convert Length</h3>
+            <h3>Length</h3>
                     <h4>Length in Meters:</h4> 
                     <input type="number" value={length.meters} onChange = {changeMeters}></input>
 

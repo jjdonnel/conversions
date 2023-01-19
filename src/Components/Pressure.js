@@ -26,7 +26,7 @@ function Pressure() {
 
     return (
         <div className="length">
-            <h3>Convert Pressure</h3>
+            <h3>Pressure</h3>
                     <h4>Inches of Mercury:</h4> 
                     <input type="number" value={pressure.inHg} onChange = {changeHg}></input>
 

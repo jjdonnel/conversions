@@ -1,16 +1,19 @@
-export const options = [
-
-    {
-      title: "Home",
-      path: "/"
-    },
+export const geoOptions = [
 
     {
       title: "Length",
       path: "/length"
-    },
+  },
 
-    {
+  {
+      title: "Circle",
+      path: "/circle"
+  }
+]
+
+export const metOptions = [
+
+  {
       title: "Temperature",
       path: "/temperature"
     },
@@ -21,16 +24,49 @@ export const options = [
     },
 
     {
-      title: "Circle",
-      path: "/circle"
-    },
-
-    {
       title: "Fluid",
       path: "/fluid"
     }
+];
 
-  ];
+export const homeOption = [
+
+  {
+    title: "Home",
+    path: "/home"
+  }
+];
+    // {
+    //   title: "Meteorology",
+    //   children: [
+    //     {
+    //       title: "Temperature",
+    //       path: "/temperature"
+    //     },
+    
+    //     {
+    //       title: "Pressure",
+    //       path: "/pressure"
+    //     },
+    //   ]
+    // },
+    //
+  //    {
+  //     title: "Temperature",
+  //     path: "/temperature"
+  //   },
+
+  //   {
+  //     title: "Pressure",
+  //     path: "/pressure"
+  //   },
+
+  //   {
+  //     title: "Fluid",
+  //     path: "/fluid"
+  //   }
+
+  // ];
 
 //   const options = [
 //     <Link to='/'>Home</Link>,

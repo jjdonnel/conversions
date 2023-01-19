@@ -36,7 +36,7 @@ function Fluid() {
 
     return (
         <div className="length">
-            <h3>Convert Fluid</h3>
+            <h3>Fluid</h3>
                     <h4>Fluid in centiliters:</h4> 
                     <input type="number" value={fluid.cc} onChange = {changeCc}></input>
 

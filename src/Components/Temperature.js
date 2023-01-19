@@ -26,7 +26,7 @@ function Temperature() {
 
     return (
         <div className="length">
-            <h3>Convert Temperature</h3>
+            <h3>Temperature</h3>
                     <h4>Degrees Fahrenheit:</h4>
                     <input type="number" value={temperature.f} onChange = {changeF}></input>
 

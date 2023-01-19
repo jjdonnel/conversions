@@ -1,19 +1,81 @@
 import { useState, useRef } from 'react';
 import { Outlet, Link } from "react-router-dom";
-import './Dropdown.css';
+import './navbar.css';
 import Arrow from './Arrow';
-import { options } from "../options";
+// import { options } from "../options";
+import { geoOptions, metOptions } from '../options';
 
 function Layout(
   // {selected, setSelected}
   )  {
   const [ selected, setSelected ] = useState('Home');
   const [ isToggled, setIsToggled ] = useState(false);
+  const [ geometry, setGeometry ] = useState(false);
+  const [ meteorology, setMeteorology ] = useState(false);
   const parentRef = useRef();
     
   return(
     <>
-      <div className="header" >
+    <div className="App">
+          <nav className="nav">
+            <div className="menu" onClick={(e)=> {setIsToggled(!isToggled)}}>
+            <span>{ selected }</span>
+                <div className='arrow'>
+                    <Arrow className={isToggled ? 'top_arrow_icon' : 'top_arrow_icon top_rotate'} width={15}/>
+                </div>
+            </div>
+            <ul className={isToggled ? "top top-open" : "top top-closed"}>
+              <li className="drop" onClick={(e)=> {setSelected('Home'); setIsToggled(!isToggled)}}>
+                <div className="title">
+                  <Link to="/">Home</Link>
+                </div>
+              </li>
+              <li className="drop">
+                <div className="title" onClick={(e)=> {setGeometry(!geometry)}}>
+                    <span>Geometry</span>
+                    <div className='arrow'>
+                        <Arrow className={geometry ? 'arrow_icon' : 'arrow_icon rotate'} width={15}/>
+                    </div>
+                </div>
+                
+                <ul ref={parentRef} className="submenu" style={geometry ? 
+                    {height: parentRef.current.scrollHeight + 'px', opacity: '1', transition: 'all 0.5s ease'} :
+                    {height: '0px', opacity: '0', transition: '0.5s ease'}}>
+                        { geoOptions.map((option, index) => {
+                            return (
+                                <li key={index} onClick={
+                                  (e) => { setSelected(option.title); setIsToggled(!isToggled) }}>
+                                    <Link to={option.path}>{option.title}</Link>
+                                </li>
+                            )
+                        })}
+                </ul>
+              </li>
+              <li className="drop">
+                <div className="title" onClick={(e)=> {setMeteorology(!meteorology)}}>
+                    <span>Meteorology</span>
+                    <div className='arrow'>
+                        <Arrow className={meteorology ? 'arrow_icon' : 'arrow_icon rotate'} width={15}/>
+                    </div>
+                </div>
+                
+                <ul ref={parentRef} className="submenu" style={meteorology ? 
+                    {height: parentRef.current.scrollHeight + 'px', transition: '0.5s ease'} :
+                    {height: '0px', transition: '0.5s ease'}}>
+                      { metOptions.map((option, index) => {
+                            return (
+                                <li key={index} onClick={
+                                  (e) => { setSelected(option.title); setIsToggled(!isToggled) }}>
+                                    <Link to={option.path}>{option.title}</Link>
+                                </li>
+                            )
+                        })}
+                </ul>
+              </li>
+            </ul>
+          </nav>
+      </div>
+      {/* <div className="header" >
           <div className='parent'>
             <h2 className='name'>Converters</h2>
             <h3> {selected} </h3>
@@ -35,20 +97,8 @@ function Layout(
             </nav>
             
           </div>
-      </div>
+      </div> */}
       
-      {/* <nav ref={parentRef} style={ isToggled ? 
-        {height: parentRef.current.scrollHeight + 'px', transition: '0.5s ease'} : 
-        {height: '0px', transition: '0.5s ease'} }>
-        {options.map((option, index) => {
-          return (
-            <div key={index} onClick={
-              (e) => { setSelected(option.title); setIsToggled(!isToggled) }}>
-              <Link to={ option.path }> { option.title }</Link>
-            </div>
-          );
-          })} 
-      </nav> */}
       <Outlet />
     </>
 
