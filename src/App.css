@@ -3,12 +3,14 @@
   padding: 0; */
   box-sizing: border-box;
   text-align: center;
+  cursor: pointer;
 }
 
 body {
   /* width: 100vw; */
   margin: 0;
 }
+
 a {
   color: black;
   text-decoration: none;
