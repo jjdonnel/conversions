@@ -18,6 +18,12 @@ function App() {
   
 
   return (
+    // <motion.div
+    //       initial={{ opacity: 0 }} 
+    //       animate={{ opacity: 1 }}
+    //       exit={{opacity: 0}}
+    //       transition={{ duration: 0.5 }} className='parent' style={{ color: "black"}}
+    //     > 
     <Router>
       <Routes>
         <Route path="/" element={<Layout />}>
@@ -30,6 +36,7 @@ function App() {
         </Route>
       </Routes>
     </Router>
+    // </motion.div>
   );
   
 }

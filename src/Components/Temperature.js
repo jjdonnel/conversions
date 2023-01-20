@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { AnimatePresence, motion } from 'framer-motion';
 
 function Temperature() {
 
@@ -26,15 +27,22 @@ function Temperature() {
 
     return (
         <div className="length">
-            <h3>Temperature</h3>
-                    <h4>Degrees Fahrenheit:</h4>
-                    <input type="number" value={temperature.f} onChange = {changeF}></input>
+            <motion.div
+                initial={{ opacity: 0 }} 
+                animate={{ opacity: 1 }}
+                exit={{opacity: 0}}
+                transition={{ duration: 0.5 }} className='parent' style={{ color: "black"}}
+            > 
+                <h3>Temperature</h3>
+                <h4>Degrees Fahrenheit:</h4>
+                <input type="number" value={temperature.f} onChange = {changeF}></input>
 
-                    <h4>Degrees Celsius:</h4> 
-                    <input type="number" value={temperature.c} onChange = {changeC}></input>
+                <h4>Degrees Celsius:</h4> 
+                <input type="number" value={temperature.c} onChange = {changeC}></input>
 
-                    <h4>Degrees Kelvin:</h4> 
-                    <input type="number" value={temperature.k} onChange = {changeK}></input>
+                <h4>Degrees Kelvin:</h4> 
+                <input type="number" value={temperature.k} onChange = {changeK}></input>
+            </motion.div>
         </div>
     )
 }

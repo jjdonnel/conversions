@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { AnimatePresence, motion } from 'framer-motion';
 
 function Fluid() {
 
@@ -36,18 +37,25 @@ function Fluid() {
 
     return (
         <div className="length">
-            <h3>Fluid</h3>
-                    <h4>Fluid in milliliters:</h4> 
-                    <input type="number" value={fluid.cc} onChange = {changeCc}></input>
+            <motion.div
+                initial={{ opacity: 0 }} 
+                animate={{ opacity: 1 }}
+                exit={{opacity: 0}}
+                transition={{ duration: 0.5 }} className='parent' style={{ color: "black"}}
+            > 
+                <h3>Fluid</h3>
+                <h4>Fluid in milliliters:</h4> 
+                <input type="number" value={fluid.cc} onChange = {changeCc}></input>
 
-                    <h4>Fluid in liters:</h4>
-                    <input type="number" value={fluid.lt} onChange = {changeLt}></input>
+                <h4>Fluid in liters:</h4>
+                <input type="number" value={fluid.lt} onChange = {changeLt}></input>
 
-                    <h4>Fluid in ounces:</h4> 
-                    <input type="number" value={fluid.oz} onChange = {changeOz}></input>
+                <h4>Fluid in ounces:</h4> 
+                <input type="number" value={fluid.oz} onChange = {changeOz}></input>
 
-                    <h4>Fluid in quarts:</h4> 
-                    <input type="number" value={fluid.qt} onChange = {changeQt}></input>
+                <h4>Fluid in quarts:</h4> 
+                <input type="number" value={fluid.qt} onChange = {changeQt}></input>
+            </motion.div>
         </div>
     )
 }

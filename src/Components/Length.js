@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { AnimatePresence, motion } from 'framer-motion';
 
 function Length() {
 
@@ -25,17 +26,26 @@ function Length() {
     })
 
     return (
+    
         <div className="length">
-            <h3>Length</h3>
-                    <h4>Length in Meters:</h4> 
-                    <input type="number" value={length.meters} onChange = {changeMeters}></input>
+            <motion.div
+                initial={{ opacity: 0 }} 
+                animate={{ opacity: 1 }}
+                exit={{opacity: 0}}
+                transition={{ duration: 0.5 }} className='parent' style={{ color: "black"}}
+            > 
+                <h3>Length</h3>
+                <h4>Length in Meters:</h4> 
+                <input type="number" value={length.meters} onChange = {changeMeters}></input>
 
-                    <h4>Length in Feet:</h4>
-                    <input type="number" value={length.feet} onChange = {changeFeet}></input>
+                <h4>Length in Feet:</h4>
+                <input type="number" value={length.feet} onChange = {changeFeet}></input>
 
-                    <h4>Length in Miles:</h4> 
-                    <input type="number" value={length.miles} onChange = {changeMiles}></input>
+                <h4>Length in Miles:</h4> 
+                <input type="number" value={length.miles} onChange = {changeMiles}></input>
+            </motion.div>
         </div>
+        
     )
 }
 export default Length;

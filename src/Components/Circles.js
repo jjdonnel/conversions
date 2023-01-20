@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { AnimatePresence, motion } from 'framer-motion';
 
 function Circle() {
 
@@ -36,18 +37,25 @@ function Circle() {
 
     return (
         <div className="length">
-            <h3>Circle Measure</h3>
-                    <h4>Radius:</h4> 
-                    <input type="number" value={circle.r} onChange = {changeR}></input>
+            <motion.div
+                initial={{ opacity: 0 }} 
+                animate={{ opacity: 1 }}
+                exit={{opacity: 0}}
+                transition={{ duration: 0.5 }} className='parent' style={{ color: "black"}}
+            > 
+                <h3>Circle Measure</h3>
+                <h4>Radius:</h4> 
+                <input type="number" value={circle.r} onChange = {changeR}></input>
 
-                    <h4>Circumference:</h4> 
-                    <input type="number" value={circle.c} onChange = {changeC}></input>
+                <h4>Circumference:</h4> 
+                <input type="number" value={circle.c} onChange = {changeC}></input>
 
-                    <h4>Area:</h4> 
-                    <input type="number" value={circle.a} onChange = {changeA}></input>
+                <h4>Area:</h4> 
+                <input type="number" value={circle.a} onChange = {changeA}></input>
 
-                    <h4>Volume:</h4> 
-                    <input type="number" value={circle.v} onChange = {changeV}></input>
+                <h4>Volume:</h4> 
+                <input type="number" value={circle.v} onChange = {changeV}></input>
+            </motion.div>
         </div>
     )
 }

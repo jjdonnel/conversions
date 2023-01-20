@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { AnimatePresence, motion } from 'framer-motion';
 
 function Pressure() {
 
@@ -26,15 +27,22 @@ function Pressure() {
 
     return (
         <div className="length">
-            <h3>Pressure</h3>
-                    <h4>Inches of Mercury:</h4> 
-                    <input type="number" value={pressure.inHg} onChange = {changeHg}></input>
+            <motion.div
+                initial={{ opacity: 0 }} 
+                animate={{ opacity: 1 }}
+                exit={{opacity: 0}}
+                transition={{ duration: 0.5 }} className='parent' style={{ color: "black"}}
+            > 
+                <h3>Pressure</h3>
+                <h4>Inches of Mercury:</h4> 
+                <input type="number" value={pressure.inHg} onChange = {changeHg}></input>
 
-                    <h4>Millibars:</h4>
-                    <input type="number" value={pressure.Mb} onChange = {changeMb}></input>
+                <h4>Millibars:</h4>
+                <input type="number" value={pressure.Mb} onChange = {changeMb}></input>
 
-                    <h4>Psi:</h4>
-                    <input type="number" value={pressure.Psi} onChange = {changePsi}></input>
+                <h4>Psi:</h4>
+                <input type="number" value={pressure.Psi} onChange = {changePsi}></input>
+            </motion.div>
         </div>
     )
 }
