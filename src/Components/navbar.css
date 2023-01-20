@@ -81,6 +81,14 @@ li:hover {
     background-color: gray;
   }
 
+  .hamburger {
+    display: none;
+  }
+
+  .dynamic {
+    display: flex;
+  }
+
 @media only screen and (max-width: 800px) {
 
     .nav {
@@ -101,7 +109,7 @@ li:hover {
     }
     .menu {
         position: absolute;
-        background-color: gray;
+        background-color: rgba(128, 128, 128, 0.5);
         left: 0;
         top: 0;
         z-index: 100;
@@ -166,5 +174,51 @@ li:hover {
 
     li:hover {
         background-color: lightblue;
+      }
+
+      .dynamic {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .line {
+        width: 25px;
+        height: 3px;
+        background: rgba(50,50,50,1);
+        margin: 4px;
+        position: relative;
+      }
+    
+      .line1-open {
+        transform: rotate(45deg) translateY(6px) translateX(6px);
+        transition: all .3s ease;
+      }
+    
+      .line1-closed, .line2-closed {
+        transform: rotate(0);
+        transition: all .3s ease;
+      }
+    
+      .line2-open {
+        height: 0;
+        width: 0;
+        transition: all .3s ease;
+      }
+    
+      .line2-closed {
+        transform: rotate(0);
+      }
+
+      .line3-open {
+        transform: rotate(-45deg) translateX(7px) translateY(-8px);
+        transition: all .3s ease;
+      }
+    
+      .line3-closed {
+        transform: rotate(0);
       }
 }

@@ -19,10 +19,18 @@ function Layout(
     <div className="App">
           <nav className="nav">
             <div className="menu" onClick={(e)=> {setIsToggled(!isToggled)}}>
-            <span>{ selected }</span>
+            <div className='dynamic'>
+              <span>{ selected }</span>
                 <div className='arrow'>
                     <Arrow className={isToggled ? 'top_arrow_icon' : 'top_arrow_icon top_rotate'} width={15}/>
                 </div>
+            </div>
+            <div className='hamburger'>
+              <span className={ isToggled ? "line line1-open" : "line line1-closed" }></span>
+              <span className={ isToggled ? "line line2-open" : "line line2-closed" }></span>
+              <span className={ isToggled ? "line line3-open" : "line line3-closed" }></span>
+            </div>
+            
             </div>
             <ul className={isToggled ? "top top-open" : "top top-closed"}>
               <li className="drop" onClick={(e)=> {setSelected('Home'); setIsToggled(!isToggled);setGeometry(false);setMeteorology(false)}}>
