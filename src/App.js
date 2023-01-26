@@ -1,7 +1,7 @@
 import './App.css';
 import Layout from './Components/Layout';
 import Home from './Components/Home';
-import Length from './Components/Length';
+import Distance from './Components/Distance';
 import Temperature from './Components/Temperature';
 import Circle from './Components/Circles';
 import Pressure from './Components/Pressure';
@@ -28,7 +28,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path="/length" element={<Length />} />
+          <Route path="/distance" element={<Distance />} />
           <Route path="/temperature" element={<Temperature />} />
           <Route path="circle" element={<Circle />} />
           <Route path="pressure" element={<Pressure />} />

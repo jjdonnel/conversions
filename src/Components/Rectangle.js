@@ -31,7 +31,7 @@ function Rectangle() {
     // })
 
     return (
-        <div className="length">
+        <div className="distance">
             <motion.div
                 initial={{ opacity: 0 }} 
                 animate={{ opacity: 1 }}

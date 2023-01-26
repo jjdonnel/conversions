@@ -153,9 +153,9 @@ li:hover {
         transform: translateX(-100%);
         transition: all .5s ease;
     }
-    .top li {
+    /* .top li {
         align-items: center;
-    }
+    } */
     li {
         text-align: left;
     }

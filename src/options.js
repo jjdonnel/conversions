@@ -1,8 +1,8 @@
 export const geoOptions = [
 
   {
-    title: "Length",
-    path: "/length"
+    title: "Distance",
+    path: "/distance"
   },
 
   {
