@@ -10,21 +10,14 @@ import Triangle from './Components/Triangle';
 import Rectangle from './Components/Rectangle';
 import Speed from './Components/Speed';
 import React from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
+// import { AnimatePresence, motion } from 'framer-motion';
 import './App.css';
-import { useState } from 'react';
-import { Route, Routes, useLocation } from 'react-router-dom';
-import { BrowserRouter as Router, Link } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 function App() {
   
   return (
-    // <motion.div
-    //       initial={{ opacity: 0 }} 
-    //       animate={{ opacity: 1 }}
-    //       exit={{opacity: 0}}
-    //       transition={{ duration: 0.5 }} className='parent' style={{ color: "black"}}
-    //     > 
     <Router>
       <Routes>
         <Route path="/" element={<Layout />}>
@@ -40,7 +33,6 @@ function App() {
         </Route>
       </Routes>
     </Router>
-    // </motion.div>
   );
   
 }

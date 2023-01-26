@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { AnimatePresence, motion } from 'framer-motion';
+import React, { useState } from "react";
+import { motion } from 'framer-motion';
 
 function Pressure() {
 

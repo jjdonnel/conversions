@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
-import { AnimatePresence, motion } from 'framer-motion';
+import React, { useState } from "react";
+import { motion } from 'framer-motion';
 
 function Rectangle() {
 
     const [ rectangle, setRectangle ] = useState({
-        height: null, width: null
+        height: 0, width: 0
     })
     
    const changeArea = (e) => {
