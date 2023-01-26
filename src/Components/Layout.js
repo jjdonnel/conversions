@@ -57,7 +57,7 @@ function Layout(
                       if (option.children) {
                         return (
                           <li key={index} className="drop">
-                            <a href={option.path}></a>
+                            <Link to={option.path}></Link>
                             <div className="title" onClick={(e) => { setShapes(!shapes); }}>
                               {option.title}
                               <div className="arrow">
@@ -85,7 +85,7 @@ function Layout(
                               {option.children.map((child, index) => {
                                 return (
                                   <li key={index}>
-                                    <a href={child.path}>{child.title}</a>
+                                    <Link to={child.path}>{child.title}</Link>
                                   </li>
                                 );
                               })}
@@ -95,7 +95,7 @@ function Layout(
                       } else {
                         return (
                           <li key={index}>
-                            <a href={option.path}>{option.title}</a>
+                            <Link to={option.path}>{option.title}</Link>
                           </li>
                         );
                       }
