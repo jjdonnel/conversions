@@ -56,7 +56,7 @@ function Layout(
                     {
                       if (option.children) {
                         return (
-                          <li key={index} className="drop">
+                          <li key={index} className="drop" >
                             <Link to={option.path}></Link>
                             <div className="title" onClick={(e) => { setShapes(!shapes); }}>
                               {option.title}
@@ -84,7 +84,8 @@ function Layout(
                             >
                               {option.children.map((child, index) => {
                                 return (
-                                  <li key={index}>
+                                  <li key={index} onClick={
+                                    (e) => { setSelected(option.title); setIsToggled(!isToggled); setMeteorology(false); setGeometry(false)}}>
                                     <Link to={child.path}>{child.title}</Link>
                                   </li>
                                 );
@@ -94,7 +95,8 @@ function Layout(
                         );
                       } else {
                         return (
-                          <li key={index}>
+                          <li key={index} onClick={
+                            (e) => { setSelected(option.title); setIsToggled(!isToggled); setMeteorology(false); setGeometry(false)}}>
                             <Link to={option.path}>{option.title}</Link>
                           </li>
                         );
