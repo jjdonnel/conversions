@@ -26,7 +26,7 @@ function Pressure() {
     })
 
     return (
-        <div className="distance">
+        <div className="pressure">
             <motion.div
                 initial={{ opacity: 0 }} 
                 animate={{ opacity: 1 }}

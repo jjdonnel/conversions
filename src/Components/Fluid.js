@@ -36,7 +36,7 @@ function Fluid() {
     })
 
     return (
-        <div className="distance">
+        <div className="fluid">
             <motion.div
                 initial={{ opacity: 0 }} 
                 animate={{ opacity: 1 }}

@@ -36,7 +36,7 @@ input {
   font-weight: 600;
 }
 
-.distance, .fluid, .home, .pressure, .temperature {
+.distance, .fluid, .home, .pressure, .temperature, .speed, .circle, .triangle, .rectangle {
   display: flex;
   flex-direction: column;
   font-size: 20px;
@@ -48,6 +48,34 @@ input {
   align-items: center;
   margin: auto;
   background: linear-gradient(to bottom right, rgb(191, 176, 255), rgb(0, 120, 25));
+}
+
+.fluid {
+  background: linear-gradient(to bottom right, rgb(191, 176, 255), rgb(1, 0, 70));
+}
+
+.temperature {
+  background: linear-gradient(to bottom right, rgb(191, 176, 255), rgb(148, 54, 0));
+}
+
+.pressure {
+  background: linear-gradient(to bottom right, rgb(191, 176, 255), rgb(17, 73, 0));
+}
+
+.speed {
+  background: linear-gradient(to bottom right, rgb(191, 176, 255), rgb(129, 0, 0));
+}
+
+.circle {
+  background: linear-gradient(to bottom right, rgb(191, 176, 255), rgb(0, 56, 161));
+}
+
+.triangle {
+  background: linear-gradient(to bottom right, rgb(191, 176, 255), rgb(155, 119, 0));
+}
+
+.rectangle {
+  background: linear-gradient(to bottom right, rgb(191, 176, 255), rgb(0, 107, 48));
 }
 
 .home {

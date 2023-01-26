@@ -31,7 +31,7 @@ function Triangle() {
         // })
     
         return (
-            <div className="distance">
+            <div className="triangle">
                 <motion.div
                     initial={{ opacity: 0 }} 
                     animate={{ opacity: 1 }}

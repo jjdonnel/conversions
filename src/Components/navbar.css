@@ -97,6 +97,7 @@ li:hover {
 @media only screen and (max-width: 800px) {
 
     .nav {
+      font-size: 1.25em;
         align-items: center;
         flex-direction: column;
         /* z-index: 100; */
@@ -162,7 +163,7 @@ li:hover {
     .submenu {
       background-color: lightblue;
         position: relative;
-        margin: 0;
+        margin-top: 5px;
         /* background-color: lightblue; */
     }
 

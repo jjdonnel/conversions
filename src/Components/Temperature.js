@@ -26,7 +26,7 @@ function Temperature() {
     })
 
     return (
-        <div className="distance">
+        <div className="temperature">
             <motion.div
                 initial={{ opacity: 0 }} 
                 animate={{ opacity: 1 }}
