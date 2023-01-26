@@ -21,7 +21,9 @@ function Triangle() {
         calcArea(newValues)
        }
     
-       const [ area, setArea ] = useState('')
+       const [ area, setArea ] = useState(null)
+
+       if (isNaN(area)) setArea(0)
     
        const calcArea = (newValues) => {
         const { height, width } = newValues;
