@@ -8,6 +8,7 @@ import Pressure from './Components/Pressure';
 import Fluid from './Components/Fluid';
 import Triangle from './Components/Triangle';
 import Rectangle from './Components/Rectangle';
+import Speed from './Components/Speed';
 import React from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import './App.css';
@@ -35,6 +36,7 @@ function App() {
           <Route path="fluid" element={<Fluid />} />
           <Route path="triangle" element={<Triangle />} />
           <Route path="rectangle" element={<Rectangle />} />
+          <Route path="speed" element={<Speed />} />
         </Route>
       </Routes>
     </Router>

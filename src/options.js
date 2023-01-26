@@ -6,6 +6,11 @@ export const geoOptions = [
   },
 
   {
+    title: "Speed",
+    path: "/speed"
+  },
+
+  {
     title: "Shapes",
     path: "#",
     children: [
