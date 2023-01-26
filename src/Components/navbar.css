@@ -2,6 +2,7 @@
     display: flex;
     background-color: gray;
     align-items: center;
+    
   }
   
   .menu {
@@ -37,7 +38,7 @@
   
   .drop {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 }
 
 .title {
@@ -62,11 +63,12 @@
 .submenu li {
     padding-left: 2em;
     padding-right: 2em;
+    text-align: left;
 }
 
 .arrow_icon {
     margin: 0;
-    transition: transform 0.5s ease;
+    transition: transform 0.2s ease;
 }
 
 .rotate {
@@ -89,6 +91,9 @@ li:hover {
     display: flex;
   }
 
+  .childMenu {
+    padding: 0;
+  }
 @media only screen and (max-width: 800px) {
 
     .nav {
@@ -100,7 +105,7 @@ li:hover {
 
     .top_arrow_icon {
         transform: rotate(270deg);
-        transition: transform 0.5s ease;
+        transition: transform 0.2s ease;
 
     }
 
@@ -109,7 +114,7 @@ li:hover {
     }
     .menu {
         position: absolute;
-        background-color: rgba(128, 128, 128, 0.5);
+        /* background-color: rgba(128, 128, 128, 0.5); */
         left: 0;
         min-width: 0;
         height: 40px;
@@ -152,12 +157,13 @@ li:hover {
         align-items: center;
     }
     li {
-        text-align: center;
+        text-align: left;
     }
     .submenu {
+      background-color: lightblue;
         position: relative;
         margin: 0;
-        background-color: lightblue;
+        /* background-color: lightblue; */
     }
 
     .submenu li {

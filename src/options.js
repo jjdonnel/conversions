@@ -1,14 +1,30 @@
 export const geoOptions = [
 
-    {
-      title: "Length",
-      path: "/length"
+  {
+    title: "Length",
+    path: "/length"
   },
 
   {
-      title: "Circle",
-      path: "/circle"
+    title: "Shapes",
+    path: "#",
+    children: [
+        {
+            title: 'Circle',
+            path: '/circle'
+        },
+
+        {
+            title: 'Rectangle',
+            path: '/rectangle'
+        },
+        {
+            title: 'Triangle',
+            path: '/triangle'
+        },
+    ]
   }
+
 ]
 
 export const metOptions = [
@@ -29,11 +45,15 @@ export const metOptions = [
     }
 ];
 
-export const homeOption = [
+export const otherOptions = [
 
+  // {
+  //   title: "Home",
+  //   path: "/home"
+  // }
   {
-    title: "Home",
-    path: "/home"
+    title: "Fluid",
+    path: "/fluid"
   }
 ];
     // {

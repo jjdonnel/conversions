@@ -3,9 +3,12 @@
   padding: 0; */
   box-sizing: border-box;
   text-align: center;
-  cursor: pointer;
+  
 }
 
+li {
+  cursor: pointer;
+}
 body {
   /* width: 100vw; */
   margin: 0;
@@ -22,6 +25,7 @@ a {
 
 .description {
   margin-top: 35vh;
+  font-style: italic;
 }
 .rotate {
   transform: rotate(180deg);

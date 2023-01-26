@@ -13,7 +13,9 @@ function Layout(
   const [ isToggled, setIsToggled ] = useState(false);
   const [ geometry, setGeometry ] = useState(false);
   const [ meteorology, setMeteorology ] = useState(false);
+  const [shapes, setShapes] = useState(false);
   const parentRef = useRef();
+  const childRef = useRef();
     
   return(
       <div className="App">
@@ -47,15 +49,64 @@ function Layout(
                 </div>
                 
                 <ul ref={parentRef} className="submenu" style={geometry ? 
-                    {height: parentRef.current.scrollHeight + 'px', opacity: '1', transition: 'all 0.5s ease'} :
-                    {height: '0px', opacity: '0', transition: '0.5s ease'}}>
+                    {height: 'auto', opacity: '1', transition: 'all 0.2s ease'} :
+                    {height: '0px', opacity: '0', transition: '0.2s ease'}}>
                         { geoOptions.map((option, index) => {
-                            return (
-                                <li key={index} onClick={
-                                  (e) => { setSelected(option.title); setIsToggled(!isToggled); setGeometry(false);setMeteorology(false)}}>
-                                    <Link to={option.path}>{option.title}</Link>
-                                </li>
-                            )
+
+                    {
+                      if (option.children) {
+                        return (
+                          <li key={index} className="drop">
+                            <a href={option.path}></a>
+                            <div className="title" onClick={(e) => { setShapes(!shapes); }}>
+                              {option.title}
+                              <div className="arrow">
+                                <Arrow className={ shapes ? "arrow_icon" : "arrow_icon rotate" } width={15} />
+                              </div>
+                            </div>
+
+                            <ul
+                              ref={childRef}
+                              className="childMenu"
+                              style={
+                                shapes
+                                  ? {
+                                      height: "auto",
+                                      opacity: 1,
+                                      transition: "all 0.2s ease",
+                                    }
+                                  : {
+                                      height: "0px",
+                                      opacity: 0,
+                                      transition: "0.2s ease",
+                                    }
+                              }
+                            >
+                              {option.children.map((child, index) => {
+                                return (
+                                  <li key={index}>
+                                    <a href={child.path}>{child.title}</a>
+                                  </li>
+                                );
+                              })}
+                            </ul>
+                          </li>
+                        );
+                      } else {
+                        return (
+                          <li key={index}>
+                            <a href={option.path}>{option.title}</a>
+                          </li>
+                        );
+                      }
+                    }
+
+                            // return (
+                            //     <li key={index} onClick={
+                            //       (e) => { setSelected(option.title); setIsToggled(!isToggled); setGeometry(false);setMeteorology(false)}}>
+                            //         <Link to={option.path}>{option.title}</Link>
+                            //     </li>
+                            // )
                         })}
                 </ul>
               </li>
@@ -68,8 +119,8 @@ function Layout(
                 </div>
                 
                 <ul ref={parentRef} className="submenu" style={meteorology ? 
-                    {height: parentRef.current.scrollHeight + 'px', transition: '0.5s ease'} :
-                    {height: '0px', transition: '0.5s ease'}}>
+                    {height: 'auto', opacity: '1', transition: '0.2s ease'} :
+                    {height: '0px', opacity: '0', transition: '0.2s ease'}}>
                       { metOptions.map((option, index) => {
                             return (
                                 <li key={index} onClick={

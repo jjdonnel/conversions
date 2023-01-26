@@ -6,6 +6,8 @@ import Temperature from './Components/Temperature';
 import Circle from './Components/Circles';
 import Pressure from './Components/Pressure';
 import Fluid from './Components/Fluid';
+import Triangle from './Components/Triangle';
+import Rectangle from './Components/Rectangle';
 import React from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import './App.css';
@@ -15,8 +17,6 @@ import { BrowserRouter as Router, Link } from 'react-router-dom';
 
 function App() {
   
-  
-
   return (
     // <motion.div
     //       initial={{ opacity: 0 }} 
@@ -33,6 +33,8 @@ function App() {
           <Route path="circle" element={<Circle />} />
           <Route path="pressure" element={<Pressure />} />
           <Route path="fluid" element={<Fluid />} />
+          <Route path="triangle" element={<Triangle />} />
+          <Route path="rectangle" element={<Rectangle />} />
         </Route>
       </Routes>
     </Router>
