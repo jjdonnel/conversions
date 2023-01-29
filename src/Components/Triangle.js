@@ -18,7 +18,10 @@ function Triangle() {
         }
         setTriangle(newValues);
     
-        calcArea(newValues)
+        calcArea(newValues); 
+
+        calcVolume(newValues);
+
        }
     
        const [ area, setArea ] = useState(null)
@@ -29,6 +32,16 @@ function Triangle() {
         const { height, width } = newValues;
         const newArea = ( parseFloat(height) * parseFloat(width) ) / 2
         setArea(newArea)
+       }
+
+       const [ volume, setVolume ] = useState(null)
+
+       if (isNaN(volume)) setVolume(0)
+
+       const calcVolume = (newValues) => {
+        const { height, width } = newValues;
+        const newVolume = ( ((1/3) * 3.1412 * parseFloat(height) * parseFloat(width ** 2) ) / 2).toFixed(2)
+        setVolume(newVolume)
        }
         // })
     
@@ -49,6 +62,9 @@ function Triangle() {
     
                     <h4>Triangle Area: </h4>
                     <h4>{area}</h4>
+
+                    <h4>Conic Volume: </h4>
+                    <h4>{volume}</h4>
                     
                 </motion.div>
             </div>

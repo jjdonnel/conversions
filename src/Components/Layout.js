@@ -37,7 +37,7 @@ function Layout()  {
                 </div>
               </li>
               <li className="drop">
-                <div className="title" onClick={(e)=> {setGeometry(!geometry)}}>
+                <div className="title" onClick={(e)=> {setGeometry(!geometry);setMeteorology(false);setShapes(false)}}>
                     <span>Geometry</span>
                     <div className='arrow'>
                         <Arrow className={geometry ? 'arrow_icon' : 'arrow_icon rotate'} width={15}/>
@@ -99,7 +99,7 @@ function Layout()  {
                 </ul>
               </li>
               <li className="drop">
-                <div className="title" onClick={(e)=> {setMeteorology(!meteorology)}}>
+                <div className="title" onClick={(e)=> {setMeteorology(!meteorology);setGeometry(false);setShapes(false)}}>
                     <span>Meteorology</span>
                     <div className='arrow'>
                         <Arrow className={meteorology ? 'arrow_icon' : 'arrow_icon rotate'} width={15}/>

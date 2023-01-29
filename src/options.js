@@ -11,6 +11,11 @@ export const geoOptions = [
   },
 
   {
+    title: "Weight",
+    path: "/weight"
+  },
+
+  {
     title: "Shapes",
     path: "#",
     children: [
