@@ -17,18 +17,17 @@ function Layout()  {
       <div className="App">
           <nav className="nav">
             <div className="menu" onClick={(e)=> {setIsToggled(!isToggled)}}>
-            <div className='dynamic'>
-              <span>{ selected }</span>
-                <div className='arrow'>
-                    <Arrow className={isToggled ? 'top_arrow_icon' : 'top_arrow_icon top_rotate'} width={15}/>
-                </div>
-            </div>
-            <div className='hamburger'>
-              <span className={ isToggled ? "line line1-open" : "line line1-closed" }></span>
-              <span className={ isToggled ? "line line2-open" : "line line2-closed" }></span>
-              <span className={ isToggled ? "line line3-open" : "line line3-closed" }></span>
-            </div>
-            
+              <div className='dynamic'>
+                <span>{ selected }</span>
+                  <div className='arrow'>
+                      <Arrow className={isToggled ? 'top_arrow_icon' : 'top_arrow_icon top_rotate'} width={15}/>
+                  </div>
+              </div>
+              <div className='hamburger'>
+                <span className={ isToggled ? "line line1-open" : "line line1-closed" }></span>
+                <span className={ isToggled ? "line line2-open" : "line line2-closed" }></span>
+                <span className={ isToggled ? "line line3-open" : "line line3-closed" }></span>
+              </div>
             </div>
             <ul className={isToggled ? "top top-open" : "top top-closed"}>
               <li className="drop" onClick={(e)=> {setSelected('Home'); setIsToggled(!isToggled);setGeometry(false);setMeteorology(false)}}>
@@ -95,7 +94,8 @@ function Layout()  {
                         </li>
                       );
                     }
-                  })}
+                    }
+                  )}
                 </ul>
               </li>
               <li className="drop">
@@ -107,16 +107,17 @@ function Layout()  {
                 </div>
                 
                 <ul ref={parentRef} className="submenu" style={meteorology ? 
-                    {height: 'auto', opacity: '1', transition: '0.2s ease'} :
-                    {height: '0px', opacity: '0', transition: '0.2s ease'}}>
-                      { metOptions.map((option, index) => {
-                        return (
-                          <li key={index} onClick={
-                            (e) => { setSelected(option.title); setIsToggled(!isToggled); setMeteorology(false); setGeometry(false)}}>
-                              <Link to={option.path}>{option.title}</Link>
-                          </li>
-                        )
-                      })}
+                  {height: 'auto', opacity: '1', transition: '0.2s ease'} :
+                  {height: '0px', opacity: '0', transition: '0.2s ease'}}>
+                    { metOptions.map((option, index) => {
+                      return (
+                        <li key={index} onClick={
+                          (e) => { setSelected(option.title); setIsToggled(!isToggled); setMeteorology(false); setGeometry(false)}}>
+                            <Link to={option.path}>{option.title}</Link>
+                        </li>
+                      )
+                    })
+                    }
                 </ul>
               </li>
             </ul>

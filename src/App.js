@@ -10,6 +10,7 @@ import Triangle from './Components/Triangle';
 import Rectangle from './Components/Rectangle';
 import Speed from './Components/Speed';
 import Weight from './Components/Weight';
+import Time from './Components/Time';
 import React from 'react';
 // import { AnimatePresence, motion } from 'framer-motion';
 import './App.css';
@@ -32,6 +33,7 @@ function App() {
           <Route path="rectangle" element={<Rectangle />} />
           <Route path="speed" element={<Speed />} />
           <Route path="weight" element={<Weight />} />
+          <Route path="time" element={<Time />} />
         </Route>
       </Routes>
     </Router>

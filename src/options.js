@@ -16,6 +16,11 @@ export const geoOptions = [
   },
 
   {
+    title: "Time",
+    path: "/Time"
+  },
+
+  {
     title: "Shapes",
     path: "#",
     children: [

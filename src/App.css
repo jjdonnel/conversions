@@ -36,7 +36,7 @@ input {
   font-weight: 600;
 }
 
-.distance, .fluid, .home, .pressure, .temperature, .speed, .circle, .triangle, .rectangle, .weight {
+.distance, .fluid, .home, .pressure, .temperature, .speed, .circle, .triangle, .rectangle, .weight, .time {
   display: flex;
   flex-direction: column;
   font-size: 20px;
@@ -81,6 +81,11 @@ input {
 .weight {
   background: linear-gradient(to bottom right, rgb(191, 176, 255), rgb(0, 86, 107));
 }
+
+.time {
+  background: linear-gradient(to bottom right, rgb(191, 176, 255), rgb(0, 107, 57));
+}
+
 .home {
   text-align: center;
 }

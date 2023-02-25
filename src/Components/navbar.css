@@ -2,6 +2,7 @@
     display: flex;
     background-color: gray;
     align-items: center;
+    z-index: 100;
     
   }
   
@@ -58,6 +59,7 @@
     margin-top: 2em;
     overflow: hidden;
     border-radius: 0 0 5px 5px;
+    z-index: 200;
 }  
 
 .submenu li {
