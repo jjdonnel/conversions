@@ -77,11 +77,11 @@ function Dropdown({items, setMenuOpen, setSelected}) {
     };
 
     document.addEventListener('mousedown', itemHandler);
-    document.addEventListener('touchstart', itemHandler);
+    // document.addEventListener('touchstart', itemHandler);
     return () => {
       // Cleanup the event listener
       document.removeEventListener('mousedown', itemHandler);
-      document.removeEventListener('touchstart', itemHandler);
+      // document.removeEventListener('touchstart', itemHandler);
     };
 
   }, [isToggled]);
