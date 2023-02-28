@@ -46,9 +46,9 @@ function Layout()  {
 
           {
           window.innerWidth < 800 && altOptions ? 
-            <li>
+            <li className='mobileList'>
               {altOptions.map((option, index)=>
-              <div key={index} onClick={closeSlideMenu}>
+              <div className='mobile' style={ option.title == 'Home' ? {margin: '1.5em', fontSize: '1.25em', fontWeight: 'bold'} : {margin: '1.5em'}} key={index} onClick={closeSlideMenu}>
                 <Link to={option.path}>{option.title}</Link>
               </div>)}
             </li>
