@@ -73,3 +73,55 @@ export const options = [
         ]
     }
 ];
+
+export const altOptions = [
+    {
+        title: 'Home',
+        path: '/'
+    },
+
+    {
+        title: 'Distance',
+        path: '/distance'
+    },
+
+    {
+        title: 'Fluid',
+        path: '/fluid'
+    },
+
+    {
+        title: 'Speed',
+        path: '/Speed'
+    },
+
+    {
+        title: 'Weight',
+        path: '/weight'
+    },
+
+    {
+        title: 'Circle',
+        path: '/circle'
+    },
+
+    {
+        title: 'Rectangle',
+        path: '/rectangle'
+    },
+
+    {
+        title: 'Triangle',
+        path: '/triangle'
+    },
+
+    {
+        title: 'Temperature',
+        path: '/temperature'
+    },
+
+    {
+        title: 'Pressure',
+        path: '/pressure'
+    }
+]

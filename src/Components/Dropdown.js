@@ -88,6 +88,16 @@ function Dropdown({items, setMenuOpen, setSelected}) {
 
   return (
 
+
+          // !items.children  ? 
+          //   <li>
+          //     <div>
+          //       <Link to={items.path}>{items.title}</Link>
+          //     </div>
+          //   </li>
+          // :
+
+
 <li className="item" ref={ref} 
 onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}
 >
@@ -99,7 +109,9 @@ onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}
     ) :
     (
       <div className="drop">
-        <div className="title" onClick={toggleSubMenu} >
+        <div className="title"
+         onClick={toggleSubMenu} 
+         >
           <span>{items.title}</span>
           <div className="arrow">
             <Arrow className={isToggled ? "arrow" : "arrow up"} width={15} />

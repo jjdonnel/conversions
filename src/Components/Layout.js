@@ -3,7 +3,7 @@ import { Outlet, Link } from "react-router-dom";
 import './navbar.css';
 import Arrow from './Arrow';
 import { geoOptions, metOptions } from '../options';
-import { options } from '../items';
+import { options, altOptions} from '../items';
 import Dropdown from './Dropdown';
 
 function Layout()  {
@@ -17,12 +17,18 @@ function Layout()  {
 
   const [ menuOpen, setMenuOpen ] = useState(false);
   const [ selected, setSelected ] = useState('Conversions Etc');
+
+  const closeSlideMenu = () => {
+    setMenuOpen(false);
+  }
     
   return(
       <div className="App">
 
 <div className='nav' >
-        <div className="menu" onClick={()=>{setMenuOpen(!menuOpen)}}>
+        <div className="menu" 
+        onClick={()=>{setMenuOpen(!menuOpen)}}
+        >
               <div className='dynamic'>
                   <span>{selected}</span>
               </div>
@@ -37,9 +43,21 @@ function Layout()  {
           {/* <div className='dynamic'>
                   <span>{selected}</span>
               </div> */}
-          {options.map((option, index) => 
+
+          {
+          window.innerWidth < 800 && altOptions ? 
+            <li>
+              {altOptions.map((option, index)=>
+              <div key={index} onClick={closeSlideMenu}>
+                <Link to={option.path}>{option.title}</Link>
+              </div>)}
+            </li>
+          : !window.innerWidth < 800 &&
+          options.map((option, index) => 
             <Dropdown items={option} key={index} setMenuOpen={setMenuOpen} setSelected={setSelected}/>
           )}
+
+          
         </ul>
       </div>
 
