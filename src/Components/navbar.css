@@ -57,7 +57,7 @@
 
   .item {
     display: flex;
-    justify-content: center;
+    /* justify-content: left; */
     position: relative;
     min-width: 10em;
     text-align: center;
