@@ -10,7 +10,7 @@ const Home = () => {
                 exit={{opacity: 0}}
                 transition={{ duration: 0.5 }} className='parent' style={{ color: "black"}}
             > 
-            <h3 className='description'style={{fontSize: '30px'}}>Conversions Etc...</h3>
+            <h3 className='description' style={{fontSize: '30px'}}>Conversions Etc...</h3>
             </motion.div>
         </div>
     );
