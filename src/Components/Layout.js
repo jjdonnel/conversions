@@ -3,19 +3,47 @@ import { Outlet, Link } from "react-router-dom";
 import './navbar.css';
 import Arrow from './Arrow';
 import { geoOptions, metOptions } from '../options';
+import { options } from '../items';
+import Dropdown from './Dropdown';
 
 function Layout()  {
-  const [ selected, setSelected ] = useState('Home');
+  // const [ selected, setSelected ] = useState('Home');
   const [ isToggled, setIsToggled ] = useState(false);
   const [ geometry, setGeometry ] = useState(false);
   const [ meteorology, setMeteorology ] = useState(false);
   const [shapes, setShapes] = useState(false);
   const parentRef = useRef();
   const childRef = useRef();
+
+  const [ menuOpen, setMenuOpen ] = useState(false);
+  const [ selected, setSelected ] = useState('Conversions Etc');
     
   return(
       <div className="App">
-          <nav className="nav">
+
+<div className='nav' >
+        <div className="menu" onClick={()=>{setMenuOpen(!menuOpen)}}>
+              <div className='dynamic'>
+                  <span>{selected}</span>
+              </div>
+              <div className='hamburger'>
+                  <span className={ menuOpen ? "line line1-open" : "line line1-closed" }></span>
+                  <span className={ menuOpen ? "line line2-open" : "line line2-closed" }></span>
+                  <span className={ menuOpen ? "line line3-open" : "line line3-closed" }></span>
+              </div>
+          </div>
+        {/* <MenuBtn /> */}
+        <ul className={ menuOpen? 'top top-open' : 'top top-closed'}>
+          {/* <div className='dynamic'>
+                  <span>{selected}</span>
+              </div> */}
+          {options.map((option, index) => 
+            <Dropdown items={option} key={index} setMenuOpen={setMenuOpen} setSelected={setSelected}/>
+          )}
+        </ul>
+      </div>
+
+          {/* <nav className="nav">
             <div className="menu" onClick={(e)=> {setIsToggled(!isToggled)}}>
               <div className='dynamic'>
                 <span>{ selected }</span>
@@ -121,7 +149,7 @@ function Layout()  {
                 </ul>
               </li>
             </ul>
-          </nav>
+          </nav> */}
 
       <Outlet />
     </div> 

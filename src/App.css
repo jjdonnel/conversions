@@ -55,7 +55,7 @@ input {
 }
 
 .temperature {
-  background: linear-gradient(to bottom right, rgb(191, 176, 255), rgb(148, 54, 0));
+  background: linear-gradient(to bottom right, rgb(191, 176, 255), rgb(223, 171, 0));
 }
 
 .pressure {
@@ -63,7 +63,7 @@ input {
 }
 
 .speed {
-  background: linear-gradient(to bottom right, rgb(191, 176, 255), rgb(129, 0, 0));
+  background: linear-gradient(to bottom right, rgb(191, 176, 255), rgb(107, 39, 0));
 }
 
 .circle {
