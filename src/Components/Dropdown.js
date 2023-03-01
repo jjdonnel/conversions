@@ -7,7 +7,7 @@ function Dropdown({ items, setMenuOpen, setSelected }) {
   const ref = useRef();
 
   const toggleSubMenu = () => {
-    setIsToggled(!isToggled);
+   isToggled ? setIsToggled(false) : setIsToggled(true);
   };
 
   const closeSubMenu = () => {
