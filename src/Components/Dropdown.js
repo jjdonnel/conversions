@@ -6,7 +6,8 @@ function Dropdown({ items, setMenuOpen, setSelected }) {
   const [isToggled, setIsToggled] = useState(false);
   const ref = useRef();
 
-  const toggleSubMenu = () => {
+  const toggleSubMenu = (e) => {
+    e.preventDefault();
    setIsToggled(!isToggled);
   };
 
