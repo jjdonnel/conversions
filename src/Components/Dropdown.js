@@ -78,7 +78,7 @@ function Dropdown({ items, setMenuOpen, setSelected }) {
           onClick={() => {
             closeSlideMenu();
             changeTitle();
-            closeSubMenu();
+            // closeSubMenu();
           }}
         >
           <Link to={items.path}>{items.title}</Link>
@@ -86,7 +86,7 @@ function Dropdown({ items, setMenuOpen, setSelected }) {
       ) : (
         <div className="drop">
           <div className="title" 
-          onKeyDown={toggleSubMenu}
+          onClick={toggleSubMenu}
           >
             <span>{items.title}</span>
             <div className="arrow">
