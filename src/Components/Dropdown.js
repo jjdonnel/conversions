@@ -7,7 +7,7 @@ function Dropdown({ items, setMenuOpen, setSelected }) {
   const ref = useRef();
 
   const toggleSubMenu = () => {
-   isToggled ? setIsToggled(false) : setIsToggled(true);
+   setIsToggled(!isToggled);
   };
 
   const closeSubMenu = () => {
@@ -33,21 +33,37 @@ function Dropdown({ items, setMenuOpen, setSelected }) {
     setIsToggled(false);
   };
 
-  useEffect(() => {
-    const itemHandler = (event) => {
-      if (isToggled && ref.current && !ref.current.contains(event.target)) {
-        setIsToggled(false);
-      }
-    };
+//   useEffect(() => {
+//     const itemHandler = (event) => {
+//       if (isToggled && ref.current && !ref.current.contains(event.target)) {
+//         setIsToggled(false);
+//       }
+//     };
 
-    document.addEventListener("mousedown", itemHandler);
-    document.addEventListener('touchend', itemHandler);
-    return () => {
-      // Cleanup the event listener
-      document.removeEventListener("mousedown", itemHandler);
-      document.removeEventListener('touchend', itemHandler);
-    };
-  }, [isToggled]);
+//     document.addEventListener("mousedown", itemHandler);
+//     document.addEventListener('touchend', itemHandler);
+//     return () => {
+//       // Cleanup the event listener
+//       document.removeEventListener("mousedown", itemHandler);
+//       document.removeEventListener('touchend', itemHandler);
+//     };
+//   }, [isToggled]);
+
+//   useEffect(()=> {
+//   const menuHandler = (event) => {
+//     if (items.children && ref.current && ref.current.contains(event.target)) {
+//       setIsToggled(!isToggled);
+//     }
+//   };
+//   document.addEventListener("mousedown", menuHandler);
+//     document.addEventListener('touchend', menuHandler);
+//     return () => {
+//       // Cleanup the event listener
+//       document.removeEventListener("mousedown", menuHandler);
+//       document.removeEventListener('touchend', menuHandler);
+//     };
+
+// }, [isToggled]);
 
   return (
     <li
@@ -69,7 +85,9 @@ function Dropdown({ items, setMenuOpen, setSelected }) {
         </div>
       ) : (
         <div className="drop">
-          <div className="title" onClick={toggleSubMenu}>
+          <div className="title" 
+          onClick={toggleSubMenu}
+          >
             <span>{items.title}</span>
             <div className="arrow">
               <Arrow className={isToggled ? "arrow" : "arrow up"} width={15} />
