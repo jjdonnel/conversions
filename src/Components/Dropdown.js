@@ -5,16 +5,13 @@ import { Link } from "react-router-dom";
 function Dropdown({ items, setMenuOpen, setSelected }) {
   const [isToggled, setIsToggled] = useState(false);
   const ref = useRef();
-  console.log(isToggled);
 
   const toggleSubMenu = () => {
    setIsToggled(!isToggled);
-  //  console.log(isToggled);
   };
 
   const closeSubMenu = () => {
     isToggled && setIsToggled(false);
-    // console.log(isToggled);
   };
 
   const closeSlideMenu = () => {
@@ -30,13 +27,11 @@ function Dropdown({ items, setMenuOpen, setSelected }) {
   const onMouseEnter = (e) => {
     e.preventDefault();
     setIsToggled(true);
-    // console.log(isToggled);
   };
 
   const onMouseLeave = (e) => {
     e.preventDefault();
     setIsToggled(false);
-    // console.log(isToggled);
   };
 
   useEffect(() => {
@@ -55,46 +50,15 @@ function Dropdown({ items, setMenuOpen, setSelected }) {
     };
   }, [isToggled]);
 
-//   useEffect(()=> {
-//   const menuHandler = (event) => {
-//     if (items.children && ref.current && ref.current.contains(event.target)) {
-//       setIsToggled(!isToggled);
-//     }
-//   };
-//   document.addEventListener("mousedown", menuHandler);
-//     document.addEventListener('touchend', menuHandler);
-//     return () => {
-//       // Cleanup the event listener
-//       document.removeEventListener("mousedown", menuHandler);
-//       document.removeEventListener('touchend', menuHandler);
-//     };
-
-// }, [isToggled]);
-
   return (
-    <li
-      className="item"
-      ref={ref}
-      onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}
-    >
+    <li className="item" ref={ref} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
       {!items.children ? (
-        <div
-          className="title"
-          onClick={() => {
-            closeSlideMenu();
-            changeTitle();
-            closeSubMenu();
-            // console.log(isToggled);
-          }}
-        >
+        <div className="title" onClick={() => { closeSlideMenu(); changeTitle(); closeSubMenu(); }} >
           <Link to={items.path}>{items.title}</Link>
         </div>
       ) : (
         <div className="drop">
-          <div className="title" 
-          onTouchEnd={toggleSubMenu}
-          >
+          <div className="title" onTouchEnd={toggleSubMenu}>
             <span>{items.title}</span>
             <div className="arrow">
               <Arrow className={isToggled ? "arrow" : "arrow up"} width={15} />
@@ -102,12 +66,7 @@ function Dropdown({ items, setMenuOpen, setSelected }) {
           </div>
           <ul className={isToggled ? "submenu" : "submenu closed"}>
             {items.children.map((child, index) => (
-              <Dropdown
-                items={child}
-                key={index}
-                setMenuOpen={setMenuOpen}
-                setSelected={setSelected}
-              />
+              <Dropdown items={child} key={index} setMenuOpen={setMenuOpen} setSelected={setSelected} />
             ))}
           </ul>
         </div>
