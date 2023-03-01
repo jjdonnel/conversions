@@ -93,7 +93,7 @@ function Dropdown({ items, setMenuOpen, setSelected }) {
       ) : (
         <div className="drop">
           <div className="title" 
-          onClick={toggleSubMenu}
+          onTouchEnd={toggleSubMenu}
           >
             <span>{items.title}</span>
             <div className="arrow">
