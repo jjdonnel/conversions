@@ -5,14 +5,16 @@ import { Link } from "react-router-dom";
 function Dropdown({ items, setMenuOpen, setSelected }) {
   const [isToggled, setIsToggled] = useState(false);
   const ref = useRef();
+  console.log(isToggled);
 
   const toggleSubMenu = () => {
    setIsToggled(!isToggled);
+  //  console.log(isToggled);
   };
 
   const closeSubMenu = () => {
     isToggled && setIsToggled(false);
-    console.log(isToggled);
+    // console.log(isToggled);
   };
 
   const closeSlideMenu = () => {
@@ -25,29 +27,33 @@ function Dropdown({ items, setMenuOpen, setSelected }) {
       : setSelected(items.title);
   };
 
-  const onMouseEnter = () => {
+  const onMouseEnter = (e) => {
+    e.preventDefault();
     setIsToggled(true);
+    // console.log(isToggled);
   };
 
-  const onMouseLeave = () => {
+  const onMouseLeave = (e) => {
+    e.preventDefault();
     setIsToggled(false);
+    // console.log(isToggled);
   };
 
-//   useEffect(() => {
-//     const itemHandler = (event) => {
-//       if (isToggled && ref.current && !ref.current.contains(event.target)) {
-//         setIsToggled(false);
-//       }
-//     };
+  useEffect(() => {
+    const itemHandler = (event) => {
+      if (isToggled && ref.current && !ref.current.contains(event.target)) {
+        setIsToggled(false);
+      }
+    };
 
-//     document.addEventListener("mousedown", itemHandler);
-//     document.addEventListener('touchend', itemHandler);
-//     return () => {
-//       // Cleanup the event listener
-//       document.removeEventListener("mousedown", itemHandler);
-//       document.removeEventListener('touchend', itemHandler);
-//     };
-//   }, [isToggled]);
+    document.addEventListener("mousedown", itemHandler);
+    document.addEventListener('touchend', itemHandler);
+    return () => {
+      // Cleanup the event listener
+      document.removeEventListener("mousedown", itemHandler);
+      document.removeEventListener('touchend', itemHandler);
+    };
+  }, [isToggled]);
 
 //   useEffect(()=> {
 //   const menuHandler = (event) => {
@@ -78,7 +84,8 @@ function Dropdown({ items, setMenuOpen, setSelected }) {
           onClick={() => {
             closeSlideMenu();
             changeTitle();
-            // closeSubMenu();
+            closeSubMenu();
+            // console.log(isToggled);
           }}
         >
           <Link to={items.path}>{items.title}</Link>
@@ -100,7 +107,6 @@ function Dropdown({ items, setMenuOpen, setSelected }) {
                 key={index}
                 setMenuOpen={setMenuOpen}
                 setSelected={setSelected}
-                setIsToggled={setIsToggled}
               />
             ))}
           </ul>
