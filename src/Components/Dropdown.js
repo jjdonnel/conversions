@@ -6,8 +6,7 @@ function Dropdown({ items, setMenuOpen, setSelected }) {
   const [isToggled, setIsToggled] = useState(false);
   const ref = useRef();
 
-  const toggleSubMenu = (e) => {
-    e.preventDefault();
+  const toggleSubMenu = () => {
    setIsToggled(!isToggled);
   };
 
@@ -87,7 +86,7 @@ function Dropdown({ items, setMenuOpen, setSelected }) {
       ) : (
         <div className="drop">
           <div className="title" 
-          onClick={toggleSubMenu}
+          onKeyDown={toggleSubMenu}
           >
             <span>{items.title}</span>
             <div className="arrow">
