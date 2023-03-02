@@ -1,10 +1,19 @@
+
 import React from "react";
 import { useState, useRef, useEffect } from "react";
 import Arrow from "./Arrow";
 import { Link } from "react-router-dom";
-function Dropdown({ items, setMenuOpen, setSelected }) {
+
+// Menu Items
+
+const Dropdown = ({ items, setMenuOpen, setSelected }) => {
+
+  // State and Reference Variables
+
   const [isToggled, setIsToggled] = useState(false);
   const ref = useRef();
+
+  // Menu Functions
 
   const toggleSubMenu = () => {
    setIsToggled(!isToggled);
@@ -24,6 +33,8 @@ function Dropdown({ items, setMenuOpen, setSelected }) {
       : setSelected(items.title);
   };
 
+  // Event Handlers
+
   const onMouseEnter = (e) => {
     e.preventDefault();
     setIsToggled(true);
@@ -33,6 +44,8 @@ function Dropdown({ items, setMenuOpen, setSelected }) {
     e.preventDefault();
     setIsToggled(false);
   };
+
+  // Side Effect
 
   useEffect(() => {
     const itemHandler = (event) => {
@@ -44,7 +57,9 @@ function Dropdown({ items, setMenuOpen, setSelected }) {
     document.addEventListener("mousedown", itemHandler);
     document.addEventListener('touchend', itemHandler);
     return () => {
+
       // Cleanup the event listener
+
       document.removeEventListener("mousedown", itemHandler);
       document.removeEventListener('touchend', itemHandler);
     };
@@ -52,11 +67,22 @@ function Dropdown({ items, setMenuOpen, setSelected }) {
 
   return (
     <li className="item" ref={ref} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
+
       {!items.children ? (
+
+  // Items Without Submenus
+
         <div className="title" onClick={() => { closeSlideMenu(); changeTitle(); closeSubMenu(); }} >
           <Link to={items.path}>{items.title}</Link>
         </div>
-      ) : (
+      ) 
+      
+      : 
+      
+      (
+
+  // Items With Submenus
+
         <div className="drop">
           <div className="title" onTouchEnd={toggleSubMenu}>
             <span>{items.title}</span>
@@ -70,6 +96,7 @@ function Dropdown({ items, setMenuOpen, setSelected }) {
             ))}
           </ul>
         </div>
+        
       )}
     </li>
   );

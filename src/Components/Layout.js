@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Outlet } from "react-router-dom";
 import "./navbar.css";
@@ -5,11 +6,17 @@ import { options } from "../items";
 import Dropdown from "./Dropdown";
 import MenuBtn from "./MenuBtn";
 
-function Layout() {
+const Layout = ()=> {
+
+// State Variables 
+
   const [menuOpen, setMenuOpen] = useState(false);
   const [selected, setSelected] = useState("Conversions Etc");
 
   return (
+    
+// Top Level Menu 
+
     <div className="App">
       <div className="nav">
         <MenuBtn selected={selected} menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
@@ -21,7 +28,11 @@ function Layout() {
           )}
         </ul>
       </div>
-      <Outlet />
+
+{/* Component Body      */}
+
+        <Outlet />
+        
     </div>
   );
 }

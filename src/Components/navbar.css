@@ -1,3 +1,4 @@
+
 .nav {
     display: flex;
     background-color: gray;
@@ -33,10 +34,6 @@
    
   }
   
-  li:hover {
-    background-color: dimgrey;
-  }
-  
   .drop {
     display: flex;
     flex-direction: column;
@@ -61,6 +58,10 @@
     position: relative;
     min-width: 10em;
     text-align: center;
+  }
+
+  .item:hover {
+    background-color: dimgrey;
   }
 
 .submenu {
@@ -222,60 +223,63 @@ li:hover {
         background-color: lightblue;
       }
 
-      .item {
-        display: flex;
-        justify-content: left;
-        position: relative;
-        /* min-width: 10em; */
-        width: 100%;
-        text-align: center;
-        margin-left: 2em;
-        margin-top: 1em;
-      }
+    .item {
+      display: flex;
+      justify-content: left;
+      position: relative;
+      /* min-width: 10em; */
+      width: 100%;
+      text-align: center;
+      /* margin-left: 2em; */
+      margin-top: 1em;
+    }
 
-      .dynamic {
-        display: none;
-      }
+    .item:hover {
+      background-color: lightblue;
+    }
+    .dynamic {
+      display: none;
+    }
 
-      .hamburger {
-        display: flex;
-        flex-direction: column;
-      }
+    .hamburger {
+      display: flex;
+      flex-direction: column;
+    }
 
-      .line {
-        width: 25px;
-        height: 3px;
-        background: rgba(0,0,0,.5);
-        margin: 2px;
-        position: relative;
-      }
-    
-      .line1-open {
-        transform: rotate(45deg) translateY(4px) translateX(4px);
-        transition: all .3s ease;
-      }
-    
-      .line1-closed, .line2-closed {
-        transform: rotate(0);
-        transition: all .3s ease;
-      }
-    
-      .line2-open {
-        height: 0;
-        width: 0;
-        transition: all .3s ease;
-      }
-    
-      .line2-closed {
-        transform: rotate(0);
-      }
+    .line {
+      width: 25px;
+      height: 3px;
+      background: rgba(0,0,0,.5);
+      margin: 2px;
+      position: relative;
+    }
+  
+    .line1-open {
+      transform: rotate(45deg) translateY(4px) translateX(4px);
+      transition: all .3s ease;
+    }
+  
+    .line1-closed, .line2-closed {
+      transform: rotate(0);
+      transition: all .3s ease;
+    }
+  
+    .line2-open {
+      height: 0;
+      width: 0;
+      transition: all .3s ease;
+    }
+  
+    .line2-closed {
+      transform: rotate(0);
+    }
 
-      .line3-open {
-        transform: rotate(-45deg) translateX(4px) translateY(-4px);
-        transition: all .3s ease;
-      }
-    
-      .line3-closed {
-        transform: rotate(0);
-      }
+    .line3-open {
+      transform: rotate(-45deg) translateX(4px) translateY(-4px);
+      transition: all .3s ease;
+    }
+  
+    .line3-closed {
+      transform: rotate(0);
+    }
 }
