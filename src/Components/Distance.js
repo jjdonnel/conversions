@@ -45,6 +45,7 @@ function Distance() {
                 transition={{ duration: 0.5 }} className='parent' style={{ color: "black"}}
             > 
                 <h3>Distance</h3>
+                
                 <h4>Distance in Meters:</h4> 
                 <input type="number" value={distance.meters} onChange = {changeMeters}></input>
 
@@ -56,6 +57,7 @@ function Distance() {
 
                 <h4>Distance in  Nautical Miles:</h4> 
                 <input type="number" value={distance.nautMiles} onChange = {changeNautMiles}></input>
+
             </motion.div>
         </div>
         

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion } from 'framer-motion';
+import Info from "./info";
 
 function Circle() {
 
@@ -35,6 +36,12 @@ function Circle() {
         v: e.target.value
     })
 
+    const [units, setUnits] = useState('in');
+
+    // const changeUnits = (newUnit)=> {
+    //     setUnits(newUnit)
+    // }
+
     return (
         <div className="circle">
             <motion.div
@@ -45,16 +52,29 @@ function Circle() {
             > 
                 <h3>Circle Measure</h3>
                 <h4>Radius:</h4> 
-                <input type="number" value={circle.r} onChange = {changeR}></input>
+                <select onChange={(event)=> setUnits(event.target.value)} value={units}>
+                    <option value='in'>in</option>
+                    <option value='ft'>ft</option>
+                    <option value='cm'>cm</option>
+                    <option value='m'>m</option>
+                </select>
+                <input type="number" value={circle.r} onChange = {changeR}></input><span className="units"> {units}</span>
 
                 <h4>Circumference:</h4> 
-                <input type="number" value={circle.c} onChange = {changeC}></input>
+                <input type="number" value={circle.c} onChange = {changeC}></input><span className="units"> {units}</span>
 
                 <h4>Area:</h4> 
-                <input type="number" value={circle.a} onChange = {changeA}></input>
+                <input type="number" value={circle.a} onChange = {changeA}></input><span className="units"> {units}<sup>2</sup></span>
 
                 <h4>Volume:</h4> 
-                <input type="number" value={circle.v} onChange = {changeV}></input>
+                <input type="number" value={circle.v} onChange = {changeV}></input><span className="units"> {units}<sup>3</sup></span> 
+                
+                <Info>
+                    <p>C = 2 &pi; r</p>
+                    <p>A = &pi; r<sup>2</sup></p>
+                    <p>V = 4/3 &pi; r<sup>3</sup></p>
+                </Info>
+
             </motion.div>
         </div>
     )
