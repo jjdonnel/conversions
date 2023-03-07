@@ -44,7 +44,6 @@ function Triangle() {
         const newVolume = ( ((1/3) * 3.1412 * parseFloat(height) * parseFloat(width ** 2) )).toFixed(2)
         setVolume(newVolume)
        }
-        // })
 
         const [units, setUnits] = useState('in');
     
