@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion } from 'framer-motion';
-import Info from "./Info";
+import Info from "./info";
 
 function Triangle() {
 
