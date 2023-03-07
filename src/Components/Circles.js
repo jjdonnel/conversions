@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion } from 'framer-motion';
-import Info from "./info";
+import Info from "./Info";
 
 function Circle() {
 
@@ -38,10 +38,6 @@ function Circle() {
 
     const [units, setUnits] = useState('in');
 
-    // const changeUnits = (newUnit)=> {
-    //     setUnits(newUnit)
-    // }
-
     return (
         <div className="circle">
             <motion.div
@@ -52,12 +48,14 @@ function Circle() {
             > 
                 <h3>Circle Measure</h3>
                 <h4>Radius:</h4> 
+                
                 <select onChange={(event)=> setUnits(event.target.value)} value={units}>
                     <option value='in'>in</option>
                     <option value='ft'>ft</option>
                     <option value='cm'>cm</option>
                     <option value='m'>m</option>
                 </select>
+
                 <input type="number" value={circle.r} onChange = {changeR}></input><span className="units"> {units}</span>
 
                 <h4>Circumference:</h4> 

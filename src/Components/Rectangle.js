@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion } from 'framer-motion';
+import Info from "./Info";
 
 function Rectangle() {
 
@@ -31,6 +32,8 @@ if (isNaN(area)) setArea(0)
     setArea(newArea)
    }
 
+   const [units, setUnits] = useState('in');
+
     return (
         <div className="rectangle">
             <motion.div
@@ -41,13 +44,25 @@ if (isNaN(area)) setArea(0)
             > 
                 <h3>Rectangle</h3>
                 <h4>Rectangle Height:</h4> 
-                <input type="number" name='height' value={rectangle.height} onChange={changeArea}></input>
+
+                <select onChange={(event)=> setUnits(event.target.value)} value={units}>
+                    <option value='in'>in</option>
+                    <option value='ft'>ft</option>
+                    <option value='cm'>cm</option>
+                    <option value='m'>m</option>
+                </select>
+
+                <input type="number" name='height' value={rectangle.height} onChange={changeArea}></input><span className="units"> {units}</span>
 
                 <h4>Rectangle Width:</h4>
-                <input type="number" name='width' value={rectangle.width} onChange={changeArea}></input>
+                <input type="number" name='width' value={rectangle.width} onChange={changeArea}></input><span className="units"> {units}</span>
 
                 <h4>Rectangle Area: </h4>
-                <h4>{area}</h4>
+                <h4>{area} <span className="units"> {units}<sup>2</sup></span></h4>
+
+                <Info>
+                    <p>A = Height * Width</p>
+                </Info>
                 
             </motion.div>
         </div>

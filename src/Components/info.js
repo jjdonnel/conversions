@@ -9,12 +9,12 @@ const Info = (props) => {
         <div className='info' onClick={ () => setInfo(!info) }>
             <div className='infoBtn'>
             <Arrow className={info ? 'arrow' : 'arrow up'} width={15} padding={'5'} fill={'#fff'} />
-                <p style={{fontSize: '20px', marginLeft: '0.5em'}}>
+                <p style={info ? {fontSize: '20px', marginLeft: '0.5em'} : {fontSize: '20px', marginLeft: '0.5em'}} >
                    { info ? 'Close' : 'Info' }
                 </p>
             </div>
             <div className='infoContent' ref={infoRef} 
-                style={ info ? {height: infoRef.current.scrollHeight + 'px', transform: `scale(1)`} : { height: '0px', transform: `scale(0)`}}>
+                style={ info ? {height: infoRef.current.scrollHeight + 'px', transform: `scale(1)`, opacity: '1', transition: 'all 0.5s'} : { height: '0px', transform: `scale(0)`, opacity: '0', transition: 'all 0.5s'}}>
                 { props.children }
             </div>
         </div>
