@@ -5,7 +5,7 @@ import Info from "./info";
 function CloudBase() {
 
     const [ values, setValues ] = useState({
-        temp: 0, dewPt: 0
+        temp: '', dewPt: ''
     })
     
    const changeBase = (e) => {
