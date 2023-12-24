@@ -70,6 +70,11 @@ export const options = [
             {
                 title: 'Pressure',
                 path: '/pressure'
+            },
+
+            {
+                title: 'Cloud Base',
+                path: '/cloudBase'
             }
         ]
     }

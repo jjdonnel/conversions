@@ -11,6 +11,7 @@ import Rectangle from './Components/Rectangle';
 import Speed from './Components/Speed';
 import Weight from './Components/Weight';
 import Time from './Components/Time';
+import CloudBase from './Components/CloudBase';
 import React from 'react';
 // import { AnimatePresence, motion } from 'framer-motion';
 import './App.css';
@@ -34,6 +35,7 @@ function App() {
           <Route path="speed" element={<Speed />} />
           <Route path="weight" element={<Weight />} />
           <Route path="time" element={<Time />} />
+          <Route path="cloudBase" element={<CloudBase />} />
         </Route>
       </Routes>
     </Router>
