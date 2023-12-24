@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 function Pressure() {
 
     const [ pressure, setPressure ] = useState({
-        inHg: 0, Mb: 0, Psi: 0
+        inHg: '', Mb: '', Psi: ''
     })
 
     const changeHg = e => setPressure({

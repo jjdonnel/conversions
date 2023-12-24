@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 function Distance() {
 
     const [ distance, setDistance ] = useState({
-        feet: 0, meters: 0, miles: 0, nautMiles: 0
+        feet: '', meters: '', miles: '', nautMiles: ''
     })
 
     const changeMeters = e => setDistance({

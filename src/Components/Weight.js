@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 function Weight() {
 
     const [ weight, setWeight ] = useState({
-        pounds: 0, kilograms: 0, stones: 0, ounces: 0
+        pounds: '', kilograms: '', stones: '', ounces: ''
     })
 
     const changePounds = e => setWeight({

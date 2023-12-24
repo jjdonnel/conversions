@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 function Time() {
 
     const [ time, setTime ] = useState({
-        s: 0, m: 0, h: 0, d: 0, y: 0
+        s: '', m: '', h: '', d: '', y: ''
     })
 
     const changeSeconds = e => setTime({

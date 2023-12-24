@@ -5,7 +5,7 @@ import Info from "./info";
 function Rectangle() {
 
     const [ rectangle, setRectangle ] = useState({
-        height: 0, width: 0
+        height: '', width: ''
     })
     
    const changeArea = (e) => {

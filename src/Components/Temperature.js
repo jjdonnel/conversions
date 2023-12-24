@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 function Temperature() {
 
     const [ temperature, setTemperature ] = useState({
-        f: 0, c: 0, k: 0
+        f: '', c: '', k: ''
     })
 
     const changeF = e => setTemperature({

@@ -5,7 +5,7 @@ import Info from "./info";
 function Circle() {
 
     const [ circle, setCircle ] = useState({
-        r: 0, c: 0, a: 0, v: 0
+        r: '', c: '', a: '', v: ''
     })
 
     const changeR = e => setCircle({

@@ -4,7 +4,7 @@ import Info from "./info";
 
 function Horizon() {
 
-    const [ height, setHeight ] = useState({sight: 0})
+    const [ height, setHeight ] = useState({sight: ''})
     
    const changeDistance = (e) => {
 

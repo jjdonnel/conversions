@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 function Speed() {
 
     const [ speed, setSpeed ] = useState({
-        mph: 0, kph: 0, kts: 0, mach: 0
+        mph: '', kph: '', kts: '', mach: ''
     })
 
     const changeMph = e => setSpeed({

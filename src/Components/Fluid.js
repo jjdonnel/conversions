@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 function Fluid() {
 
     const [ fluid, setFluid ] = useState({
-        cc: 0, oz: 0, qt: 0, lt: 0
+        cc: '', oz: '', qt: '', lt: ''
     })
 
     const changeCc = e => setFluid({
